@@ -1,315 +1,317 @@
 #include <LC75823.h>
 
-void LC75823::printCyrSymbols(const wchar_t chr,int pos=0) {
-  switch (chr) {
-    case 1040: // а
+void LC75823::printCyrSymbols(const wchar_t chr, int pos = 0)
+{
+  switch (chr)
+  {
+  case 1040: // а
 
-      segmentB(pos);
-      segmentC(pos);
-      segmentM(pos);
-      segmentJ(pos);
-      segmentG2(pos);
+    segmentB(pos);
+    segmentC(pos);
+    segmentM(pos);
+    segmentJ(pos);
+    segmentG2(pos);
 
-      break;
+    break;
 
-    case 1041: // б
-      segmentA(pos);
-      segmentC(pos);
-      segmentD(pos);
-      segmentE(pos);
-      segmentF(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      break;
+  case 1041: // б
+    segmentA(pos);
+    segmentC(pos);
+    segmentD(pos);
+    segmentE(pos);
+    segmentF(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    break;
 
-    case 1042: // в
-      segmentA(pos);
-      segmentJ(pos);
-      segmentK(pos);
-      segmentD(pos);
-      segmentE(pos);
-      segmentF(pos);
-      segmentG1(pos);
-      break;
+  case 1042: // в
+    segmentA(pos);
+    segmentJ(pos);
+    segmentK(pos);
+    segmentD(pos);
+    segmentE(pos);
+    segmentF(pos);
+    segmentG1(pos);
+    break;
 
-    case 1043: // г
-      segmentA(pos);
-      segmentE(pos);
-      segmentF(pos);
-      break;
+  case 1043: // г
+    segmentA(pos);
+    segmentE(pos);
+    segmentF(pos);
+    break;
 
-    case 1044:  // д
-      segmentJ(pos);
-      segmentB(pos);
-      segmentG2(pos);
-      segmentG1(pos);
-      segmentC(pos);
-      segmentE(pos);
-      break;
+  case 1044: // д
+    segmentJ(pos);
+    segmentB(pos);
+    segmentG2(pos);
+    segmentG1(pos);
+    segmentC(pos);
+    segmentE(pos);
+    break;
 
-    case 1045: // е
-      segmentA(pos);
-      segmentF(pos);
-      segmentE(pos);
-      segmentD(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      break;
+  case 1045: // е
+    segmentA(pos);
+    segmentF(pos);
+    segmentE(pos);
+    segmentD(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    break;
 
+  case 1046: // ж
+    segmentH(pos);
+    segmentI(pos);
+    segmentJ(pos);
+    segmentM(pos);
+    segmentL(pos);
+    segmentK(pos);
+    break;
 
-    case 1046: // ж
-      segmentH(pos);
-      segmentI(pos);
-      segmentJ(pos);
-      segmentM(pos);
-      segmentL(pos);
-      segmentK(pos);
-      break;
+  case 1047: // з
+    segmentA(pos);
+    segmentJ(pos);
+    segmentG1(pos);
+    segmentK(pos);
+    segmentD(pos);
+    break;
 
-    case 1047: // з
-      segmentA(pos);
-      segmentJ(pos);
-      segmentG1(pos);
-      segmentK(pos);
-      segmentD(pos);
-      break;
+  case 1048: // и
+    segmentF(pos);
+    segmentE(pos);
+    segmentM(pos);
+    segmentJ(pos);
+    segmentC(pos);
+    segmentB(pos);
+    break;
 
-    case 1048: // и
-      segmentF(pos);
-      segmentE(pos);
-      segmentM(pos);
-      segmentJ(pos);
-      segmentC(pos);
-      segmentB(pos);
-      break;
+  case 1049: // й
+    segmentF(pos);
+    segmentE(pos);
+    segmentM(pos);
+    segmentJ(pos);
+    segmentC(pos);
+    segmentB(pos);
+    segmentI(pos);
 
-    case 1049: // й
-      segmentF(pos);
-      segmentE(pos);
-      segmentM(pos);
-      segmentJ(pos);
-      segmentC(pos);
-      segmentB(pos);
-      segmentI(pos);
+    break;
 
-      break;
+  case 1050: // к
+    segmentF(pos);
+    segmentE(pos);
+    segmentG1(pos);
+    segmentJ(pos);
+    segmentK(pos);
 
-    case 1050: // к
-      segmentF(pos);
-      segmentE(pos);
-      segmentG1(pos);
-      segmentJ(pos);
-      segmentK(pos);
+    break;
 
-      break;
+  case 1051: // л
+    segmentB(pos);
+    segmentC(pos);
+    segmentJ(pos);
+    segmentM(pos);
 
-    case 1051: // л
-      segmentB(pos);
-      segmentC(pos);
-      segmentJ(pos);
-      segmentM(pos);
+    break;
 
-      break;
+  case 1052: // м
+    segmentE(pos);
+    segmentF(pos);
+    segmentH(pos);
+    segmentJ(pos);
+    segmentB(pos);
+    segmentC(pos);
 
-    case 1052: // м
-      segmentE(pos);
-      segmentF(pos);
-      segmentH(pos);
-      segmentJ(pos);
-      segmentB(pos);
-      segmentC(pos);
+    break;
 
-      break;
+  case 1053: // н
+    segmentF(pos);
+    segmentE(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    segmentB(pos);
+    segmentC(pos);
 
-    case 1053: // н
-      segmentF(pos);
-      segmentE(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      segmentB(pos);
-      segmentC(pos);
+    break;
 
-      break;
+  case 1054: // о
+    segmentA(pos);
+    segmentB(pos);
+    segmentC(pos);
+    segmentD(pos);
+    segmentE(pos);
+    segmentF(pos);
 
-    case 1054: // о
-      segmentA(pos);
-      segmentB(pos);
-      segmentC(pos);
-      segmentD(pos);
-      segmentE(pos);
-      segmentF(pos);
+    break;
 
-      break;
+  case 1055: // п
+    segmentA(pos);
+    segmentB(pos);
+    segmentC(pos);
+    segmentE(pos);
+    segmentF(pos);
 
-    case 1055: // п
-      segmentA(pos);
-      segmentB(pos);
-      segmentC(pos);
-      segmentE(pos);
-      segmentF(pos);
+    break;
 
-      break;
+  case 1056: // р
+    segmentA(pos);
+    segmentJ(pos);
+    segmentG1(pos);
+    segmentF(pos);
+    segmentE(pos);
 
-    case 1056: // р
-      segmentA(pos);
-      segmentJ(pos);
-      segmentG1(pos);
-      segmentF(pos);
-      segmentE(pos);
+    break;
 
-      break;
+  case 1057: // с
+    segmentA(pos);
+    segmentF(pos);
+    segmentE(pos);
+    segmentD(pos);
 
-    case 1057: // с
-      segmentA(pos);
-      segmentF(pos);
-      segmentE(pos);
-      segmentD(pos);
+    break;
 
-      break;
+  case 1058: // т
+    segmentA(pos);
+    segmentI(pos);
+    segmentL(pos);
 
-    case 1058: // т
-      segmentA(pos);
-      segmentI(pos);
-      segmentL(pos);
+    break;
 
-      break;
+  case 1059: // у
+    segmentH(pos);
+    segmentJ(pos);
+    segmentM(pos);
 
-    case 1059: // у
-      segmentH(pos);
-      segmentJ(pos);
-      segmentM(pos);
+    break;
 
-      break;
+  case 1060: // ф
+    segmentA(pos);
+    segmentF(pos);
+    segmentB(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    segmentL(pos);
+    segmentI(pos);
 
-    case 1060: // ф
-      segmentA(pos);
-      segmentF(pos);
-      segmentB(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      segmentL(pos);
-      segmentI(pos);
+    break;
 
-      break;
+  case 1061: // х
+    segmentH(pos);
+    segmentJ(pos);
+    segmentM(pos);
+    segmentK(pos);
 
-    case 1061: // х
-      segmentH(pos);
-      segmentJ(pos);
-      segmentM(pos);
-      segmentK(pos);
+    break;
 
-      break;
+  case 1062: // ц
+    segmentF(pos);
+    segmentI(pos);
+    segmentE(pos);
+    segmentL(pos);
+    segmentD(pos);
 
-    case 1062: // ц
-      segmentF(pos);
-      segmentI(pos);
-      segmentE(pos);
-      segmentL(pos);
-      segmentD(pos);
+    break;
 
-      break;
+  case 1063: // ч
+    segmentI(pos);
+    segmentB(pos);
+    segmentG2(pos);
+    segmentC(pos);
 
-    case 1063: // ч
-      segmentI(pos);
-      segmentB(pos);
-      segmentG2(pos);
-      segmentC(pos);
+    break;
 
-      break;
+  case 1064: // ш
+    segmentF(pos);
+    segmentI(pos);
+    segmentB(pos);
+    segmentE(pos);
+    segmentL(pos);
+    segmentC(pos);
+    segmentD(pos);
 
-    case 1064: // ш
-      segmentF(pos);
-      segmentI(pos);
-      segmentB(pos);
-      segmentE(pos);
-      segmentL(pos);
-      segmentC(pos);
-      segmentD(pos);
+    break;
 
-      break;
+  case 1065: // щ
+    segmentF(pos);
+    segmentI(pos);
+    segmentB(pos);
+    segmentE(pos);
+    segmentL(pos);
+    segmentC(pos);
+    segmentD(pos);
 
-    case 1065: // щ
-      segmentF(pos);
-      segmentI(pos);
-      segmentB(pos);
-      segmentE(pos);
-      segmentL(pos);
-      segmentC(pos);
-      segmentD(pos);
+    break;
 
-      break;
+  case 1066: // ъ
+    segmentF(pos);
+    segmentG1(pos);
+    segmentM(pos);
+    segmentE(pos);
 
-    case 1066: // ъ
-      segmentF(pos);
-      segmentG1(pos);
-      segmentM(pos);
-      segmentE(pos);
+    break;
 
-      break;
+  case 1067: // ы
+    segmentF(pos);
+    segmentG1(pos);
+    segmentM(pos);
+    segmentE(pos);
+    segmentB(pos);
+    segmentC(pos);
 
-    case 1067: // ы
-      segmentF(pos);
-      segmentG1(pos);
-      segmentM(pos);
-      segmentE(pos);
-      segmentB(pos);
-      segmentC(pos);
+    break;
 
-      break;
+  case 1068: // ь
+    segmentF(pos);
+    segmentG1(pos);
+    segmentM(pos);
+    segmentE(pos);
 
-    case 1068: // ь
-      segmentF(pos);
-      segmentG1(pos);
-      segmentM(pos);
-      segmentE(pos);
+    break;
 
-      break;
+  case 1069: // э
+    segmentA(pos);
+    segmentB(pos);
+    segmentC(pos);
+    segmentD(pos);
+    segmentG2(pos);
 
-    case 1069: // э
-      segmentA(pos);
-      segmentB(pos);
-      segmentC(pos);
-      segmentD(pos);
-      segmentG2(pos);
+    break;
 
-      break;
+  case 1070: // ю
+    segmentF(pos);
+    segmentE(pos);
+    segmentG1(pos);
+    segmentJ(pos);
+    segmentK(pos);
+    segmentB(pos);
+    segmentC(pos);
 
-    case 1070: // ю
-      segmentF(pos);
-      segmentE(pos);
-      segmentG1(pos);
-      segmentJ(pos);
-      segmentK(pos);
-      segmentB(pos);
-      segmentC(pos);
+    break;
 
-      break;
+  case 1071: // я
+    segmentA(pos);
+    segmentB(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    segmentF(pos);
+    segmentM(pos);
+    segmentC(pos);
 
-    case 1071: // я
-      segmentA(pos);
-      segmentB(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      segmentF(pos);
-      segmentM(pos);
-      segmentC(pos);
-
-      break;
-
+    break;
   }
 }
-void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
-  switch (chr) {
-    case 'a':
-      segmentB(pos);
-      segmentC(pos);
-      segmentM(pos);
-      segmentJ(pos);
-      segmentG2(pos);
+void LC75823::printLatSymbols(const wchar_t chr, int pos = 0)
+{
+  switch (chr)
+  {
+  case 'a':
+    segmentB(pos);
+    segmentC(pos);
+    segmentM(pos);
+    segmentJ(pos);
+    segmentG2(pos);
 
-      break;
+    break;
 
-    case 'b':
+  case 'b':
     segmentA(pos);
     segmentB(pos);
     segmentC(pos);
@@ -317,17 +319,17 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentI(pos);
     segmentL(pos);
     segmentG2(pos);
-      break;
+    break;
 
-    case 'c':
+  case 'c':
     segmentA(pos);
     segmentF(pos);
     segmentE(pos);
     segmentD(pos);
 
-      break;
+    break;
 
-    case 'd':
+  case 'd':
     segmentA(pos);
     segmentB(pos);
     segmentC(pos);
@@ -335,9 +337,9 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentI(pos);
     segmentL(pos);
 
-      break;
+    break;
 
-    case 'e':
+  case 'e':
     segmentA(pos);
     segmentF(pos);
     segmentE(pos);
@@ -345,18 +347,18 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentG1(pos);
     segmentG2(pos);
 
-      break;
+    break;
 
-    case 'f':
+  case 'f':
     segmentA(pos);
     segmentF(pos);
     segmentE(pos);
     segmentG1(pos);
     segmentG2(pos);
 
-      break;
+    break;
 
-    case 'g':
+  case 'g':
     segmentA(pos);
     segmentF(pos);
     segmentE(pos);
@@ -364,9 +366,9 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentC(pos);
     segmentG2(pos);
 
-      break;
+    break;
 
-    case 'h':
+  case 'h':
     segmentF(pos);
     segmentE(pos);
     segmentB(pos);
@@ -374,41 +376,41 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentG1(pos);
     segmentG2(pos);
 
-      break;
+    break;
 
-    case 'i':
+  case 'i':
     segmentA(pos);
     segmentI(pos);
     segmentL(pos);
     segmentD(pos);
 
-      break;
+    break;
 
-    case 'j':
+  case 'j':
     segmentB(pos);
     segmentC(pos);
     segmentD(pos);
     segmentE(pos);
 
-      break;
+    break;
 
-    case 'k':
+  case 'k':
     segmentF(pos);
     segmentE(pos);
     segmentG1(pos);
     segmentJ(pos);
     segmentK(pos);
 
-      break;
+    break;
 
-    case 'l':
+  case 'l':
     segmentF(pos);
     segmentE(pos);
     segmentD(pos);
 
-      break;
+    break;
 
-    case 'm':
+  case 'm':
     segmentE(pos);
     segmentF(pos);
     segmentH(pos);
@@ -416,9 +418,9 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentB(pos);
     segmentC(pos);
 
-      break;
+    break;
 
-    case 'n':
+  case 'n':
     segmentE(pos);
     segmentF(pos);
     segmentH(pos);
@@ -426,9 +428,9 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentC(pos);
     segmentB(pos);
 
-      break;
+    break;
 
-    case 'o':
+  case 'o':
     segmentA(pos);
     segmentB(pos);
     segmentC(pos);
@@ -436,9 +438,9 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentE(pos);
     segmentF(pos);
 
-      break;
+    break;
 
-    case 'p':
+  case 'p':
     segmentA(pos);
     segmentB(pos);
     segmentG1(pos);
@@ -446,9 +448,9 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentF(pos);
     segmentE(pos);
 
-      break;
+    break;
 
-    case 'q':
+  case 'q':
     segmentA(pos);
     segmentB(pos);
     segmentC(pos);
@@ -457,9 +459,9 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentE(pos);
     segmentF(pos);
 
-      break;
+    break;
 
-    case 'r':
+  case 'r':
     segmentA(pos);
     segmentB(pos);
     segmentG1(pos);
@@ -468,9 +470,9 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentF(pos);
     segmentK(pos);
 
-      break;
+    break;
 
-    case 's':
+  case 's':
     segmentA(pos);
     segmentF(pos);
     segmentG1(pos);
@@ -478,33 +480,33 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentC(pos);
     segmentD(pos);
 
-      break;
+    break;
 
-    case 't':
+  case 't':
     segmentA(pos);
     segmentI(pos);
     segmentL(pos);
 
-      break;
+    break;
 
-    case 'u':
+  case 'u':
     segmentF(pos);
     segmentE(pos);
     segmentD(pos);
     segmentC(pos);
     segmentB(pos);
 
-      break;
+    break;
 
-    case 'v':
+  case 'v':
     segmentF(pos);
     segmentE(pos);
     segmentM(pos);
     segmentJ(pos);
 
-      break;
+    break;
 
-    case 'w':
+  case 'w':
     segmentF(pos);
     segmentE(pos);
     segmentM(pos);
@@ -512,155 +514,197 @@ void LC75823::printLatSymbols(const wchar_t chr, int pos=0) {
     segmentC(pos);
     segmentB(pos);
 
-      break;
+    break;
 
-    case 'x':
+  case 'x':
     segmentH(pos);
     segmentJ(pos);
     segmentM(pos);
     segmentK(pos);
 
-      break;
+    break;
 
-    case 'y':
+  case 'y':
     segmentH(pos);
     segmentJ(pos);
     segmentL(pos);
 
-      break;
+    break;
 
-    case 'z':
+  case 'z':
     segmentA(pos);
     segmentJ(pos);
     segmentM(pos);
     segmentD(pos);
 
-      break;
+    break;
 
+  case '1':
+    segmentJ(pos);
+    segmentB(pos);
+    segmentC(pos);
 
+    break;
 
+  case '2':
+    segmentA(pos);
+    segmentB(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    segmentE(pos);
+    segmentD(pos);
 
-    case '1':
-      segmentJ(pos);
-      segmentB(pos);
-      segmentC(pos);
+    break;
 
-      break;
+  case '3':
+    segmentA(pos);
+    segmentB(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    segmentC(pos);
+    segmentD(pos);
 
-    case '2':
-      segmentA(pos);
-      segmentB(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      segmentE(pos);
-      segmentD(pos);
+    break;
 
-      break;
+  case '4':
+    segmentF(pos);
+    segmentB(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    segmentC(pos);
 
-    case '3':
-      segmentA(pos);
-      segmentB(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      segmentC(pos);
-      segmentD(pos);
+    break;
 
-      break;
+  case '5':
+    segmentA(pos);
+    segmentF(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    segmentC(pos);
+    segmentD(pos);
 
-    case '4':
-      segmentF(pos);
-      segmentB(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      segmentC(pos);
+    break;
 
-      break;
+  case '6':
+    segmentA(pos);
+    segmentF(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    segmentE(pos);
+    segmentC(pos);
+    segmentD(pos);
 
-    case '5':
-      segmentA(pos);
-      segmentF(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      segmentC(pos);
-      segmentD(pos);
+    break;
 
-      break;
+  case '7':
+    segmentA(pos);
+    segmentB(pos);
+    segmentC(pos);
 
-    case '6':
-      segmentA(pos);
-      segmentF(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      segmentE(pos);
-      segmentC(pos);
-      segmentD(pos);
+    break;
 
-      break;
+  case '8':
+    segmentA(pos);
+    segmentB(pos);
+    segmentC(pos);
+    segmentD(pos);
+    segmentE(pos);
+    segmentF(pos);
+    segmentG1(pos);
+    segmentG2(pos);
 
-    case '7':
-      segmentA(pos);
-      segmentB(pos);
-      segmentC(pos);
+    break;
 
-      break;
+  case '9':
+    segmentA(pos);
+    segmentB(pos);
+    segmentC(pos);
+    segmentD(pos);
+    segmentF(pos);
+    segmentG1(pos);
+    segmentG2(pos);
 
-    case '8':
-      segmentA(pos);
-      segmentB(pos);
-      segmentC(pos);
-      segmentD(pos);
-      segmentE(pos);
-      segmentF(pos);
-      segmentG1(pos);
-      segmentG2(pos);
+    break;
 
-      break;
+  case '0':
+    segmentA(pos);
+    segmentB(pos);
+    segmentC(pos);
+    segmentD(pos);
+    segmentE(pos);
+    segmentF(pos);
 
-    case '9':
-      segmentA(pos);
-      segmentB(pos);
-      segmentC(pos);
-      segmentD(pos);
-      segmentF(pos);
-      segmentG1(pos);
-      segmentG2(pos);
+    break;
+  case '+':
+    segmentI(pos);
+    segmentL(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    break;
+  case '-':
+    segmentG1(pos);
+    segmentG2(pos);
 
-      break;
+    break;
+  case '/':
+    segmentJ(pos);
+    segmentM(pos);
 
-    case '0':
-      segmentA(pos);
-      segmentB(pos);
-      segmentC(pos);
-      segmentD(pos);
-      segmentE(pos);
-      segmentF(pos);
+    break;
+  case '(':
+    segmentJ(pos);
+    segmentK(pos);
 
-      break;
-    case '+':
-      segmentI(pos);
-      segmentL(pos);
-      segmentG1(pos);
-      segmentG2(pos);
-      break;
-    case '-':
-      segmentG1(pos);
-      segmentG2(pos);
+    break;
+  case ')':
+    segmentH(pos);
+    segmentM(pos);
 
-      break;
-    case '/':
-      segmentJ(pos);
-      segmentM(pos);
+    break;
 
-      break;
-    case '(':
-      segmentJ(pos);
-      segmentK(pos);
+  case '_':
+    segmentD(pos);
+    break;
+  case '*':
+    segmentH(pos);
+    segmentI(pos);
+    segmentJ(pos);
+    segmentM(pos);
+    segmentK(pos);
+    segmentL(pos);
+    segmentG1(pos);
+    segmentG2(pos);
 
-      break;
-    case ')':
-      segmentH(pos);
-      segmentM(pos);
+    break;
+  case '<':
+    segmentJ(pos);
+    segmentB(pos);
+    segmentG2(pos);
+    segmentK(pos);
+    segmentC(pos);
 
-      break;
-   }
+    break;
+  case '>':
+    segmentF(pos);
+    segmentH(pos);
+    segmentG1(pos);
+    segmentE(pos);
+    segmentM(pos);
+    break;
+  case '%':
+    segmentJ(pos);
+    segmentM(pos);
+    segmentH(pos);
+    segmentG1(pos);
+    segmentF(pos);
+    segmentG2(pos);
+    segmentK(pos);
+    segmentC(pos);
+    break;
+  case '=':
+    segmentA(pos);
+    segmentG1(pos);
+    segmentG2(pos);
+    break;
+  }
 }

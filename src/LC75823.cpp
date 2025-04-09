@@ -2,6 +2,7 @@
 #include <SPI.h>
 #include <Segments.h>
 #include <Symbols.h>
+
 LC75823::LC75823(int CLK, int DIN, int CS, int totalDigits = 8)
 {
   _totalDigits = totalDigits;
@@ -15,7 +16,7 @@ void LC75823::begin()
   SPI.begin();
   SPCR = (0 << SPIE) | (1 << SPE) | (1 << DORD) | (1 << MSTR) | (0 << CPOL) | (0 << CPHA) | (1 << SPR1) | (1 << SPR0);
   SPSR = (0 << SPI2X);
-  getClearScreen();
+  ClearBuffer();
   showScreen();
 }
 
@@ -53,10 +54,10 @@ void LC75823::showScreen()
     }
   }
   send_control_bits();
-  getClearScreen();
+  ClearBuffer();
 }
 
-void LC75823::getClearScreen()
+void LC75823::ClearBuffer()
 {
   for (int n = 0; n < 10; n++)
   {
@@ -92,28 +93,61 @@ void LC75823::print(const wchar_t *txt, int startCursor)
 
 void LC75823::scrollText(const wchar_t *txt, const int totalCells = 8, int delayMs = 300)
 {
+  //_scrollTextTim = delayMs;
+  if (isTimeToUpdate(t1, delayMs))
+  {
+    int len = calculateTextLength(txt);    // Подсчет длины текста
+    displayText(txt, len);                 // Отображение текста
+    updateScrollPosition(len, totalCells); // Обновление позиции прокрутки
+    showScreen();                          // Отображение на экране
+    // Serial.println("timerrrrrrrrrrrrrrrrrrrrrrrr");
+  }
+}
+
+int LC75823::calculateTextLength(const wchar_t *txt)
+{
   int len = 0;
   while (txt[len] != L'\0')
     len++;
-  int i = 0;
-  while (txt[i] != '\0')
+  return len;
+}
+
+void LC75823::displayText(const wchar_t *txt, int len)
+{
+  for (int i = 0; i < len; i++)
   {
     printCyrSymbols(txt[i], i + 1 + scroll);
     printLatSymbols(txt[i], i + 1 + scroll);
-    i++;
   }
+}
+
+void LC75823::updateScrollPosition(int len, int totalCells)
+{
   scroll--;
-  if (abs(scroll) > len)
+  if (abs(scroll) > len + _scrollCorrect)
   {
     scroll = totalCells;
   }
   digitPos = scroll;
   _len = len;
-  // Serial.println(abs(scroll));
-  delay(delayMs);
 }
 
 int LC75823::getDigit(int charNum)
 {
+
+  _scrollCorrect = charNum - _len;
+  Serial.print("Scrollcorrect:");
+  Serial.println(_scrollCorrect);
   return digitPos + charNum + 1;
+}
+
+bool LC75823::isTimeToUpdate(unsigned long &lastUpdate, int delayMs)
+{
+  unsigned long now = millis();
+  if (now - lastUpdate > delayMs)
+  {
+    lastUpdate = now;
+    return true;
+  }
+  return false;
 }

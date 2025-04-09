@@ -16,16 +16,17 @@ void setup()
 void loop()
 {
   // put your main code here, to run repeatedly:
-  disp.scrollText(L"hello world ", 8);
-  Serial.print("Digit1Pos: ");
+  // disp.getClearScreen();
+  disp.scrollText(L"hello world", 8, 250);
+  /*Serial.print("Digit1Pos: ");
   Serial.println(disp.getDigit(1));
   Serial.print("getScroll: ");
   Serial.println(disp.getScroll());
   Serial.print("getLen: ");
   Serial.println(disp.getLen());
+  */
 
-  disp.segmentA(disp.getDigit(12));
-  disp.showScreen();
+  // disp.showScreen();
 
   // disp.send_ccb();
   // for(int i=0; i<156;i++){
