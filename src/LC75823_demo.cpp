@@ -3,7 +3,8 @@
 
 #include <LC75823.h>
 
-LC75823 disp(13, 11, 10);
+
+LC75823 disp(13, 11, 8);
 void setup()
 {
   Serial.begin(115200);
@@ -11,26 +12,23 @@ void setup()
   disp.allOn();
   delay(1000);
   disp.allOff();
+  disp.calibrate(500);
+  disp.ClearBuffer();
+  disp.showScreen();
+  delay(500);
 }
 
 void loop()
 {
-  // put your main code here, to run repeatedly:
-  // disp.getClearScreen();
-  disp.scrollText(L"hello world", 8, 250);
-  /*Serial.print("Digit1Pos: ");
-  Serial.println(disp.getDigit(1));
-  Serial.print("getScroll: ");
-  Serial.println(disp.getScroll());
-  Serial.print("getLen: ");
-  Serial.println(disp.getLen());
-  */
 
-  // disp.showScreen();
-
-  // disp.send_ccb();
-  // for(int i=0; i<156;i++){
-  // SPI.transfer(0xFF);
-  // }
-  // disp.send_control_bits();
+  /*button.tick();
+  if (button.hasClicks())
+  {
+    disp.allOn();
+    delay(1000);
+    disp.allOff();
+    delay(1000);
+  }
+*/
+  disp.scrollText(L"deorro - five more hours", 8, 250);
 }
