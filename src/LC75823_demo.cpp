@@ -30,5 +30,5 @@ void loop()
     delay(1000);
   }
 */
-  disp.scrollText(L"deorro - five more hours", 8, 250);
+  disp.scrollText(L"clutterfunk", 8, 250);
 }
