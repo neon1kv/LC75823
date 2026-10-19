@@ -9,7 +9,7 @@ LC75823::LC75823(int CLK, int DIN, int CS, int totalDigits = 8)
   _CS = CS;
 }
 
-void LC75823::begin() // inicialize SPI and send clear buffer
+void LC75823::begin() // initialize SPI and send clean buffer
 {
   pinMode(_CS, OUTPUT);
   SPI.begin();
@@ -19,7 +19,7 @@ void LC75823::begin() // inicialize SPI and send clear buffer
   showScreen();
 }
 
-void LC75823::ClearBuffer() // Clear screenBuffer
+void LC75823::ClearBuffer() // Clean screenBuffer
 {
   for (int i = 0; i < 20; i++)
   {
@@ -54,11 +54,11 @@ void LC75823::scrollText(const wchar_t *txt, const int totalCells = 8, int delay
   //_scrollTextTim = delayMs;
   if (isTimeToUpdate(t1, delayMs))
   {
-    int len = calculateTextLength(txt); // Подсчет длины текста
+    int len = calculateTextLength(txt); 
 
-    displayText(txt, len);                 // Отображение текста
-    updateScrollPosition(len, totalCells); // Обновление позиции прокрутки
-    showScreen();                          // Отображение на экране
+    displayText(txt, len);                
+    updateScrollPosition(len, totalCells); 
+    showScreen();                          
     // Serial.println("timerrrrrrrrrrrrrrrrrrrrrrrr");
   }
 }
@@ -111,8 +111,7 @@ int LC75823::getDigit(int charNum)
 
 bool LC75823::calibrate(const int delayMs, const bool prevSegment)
 {
-  // Обновляем состояние кнопки
-  // byte screenBuffer[20] = {0}; // Массив для хранения данных
+
   button.tick();
   if (isTimeToUpdate(t3, delayMs))
   {
@@ -134,10 +133,10 @@ bool LC75823::calibrate(const int delayMs, const bool prevSegment)
             for (int b = 7; b >= 0; b--)
             {
 
-              calibrationFillBuffer(i, b, prevSegment); // Обновляем массив
-              // printDebugInfo(i, b);                     // Выводим отладочную информацию
-              sendCalibrationBuffer(); // Отправляем данные на дисплей
-              // delay(delayMs);          // Задержка
+              calibrationFillBuffer(i, b, prevSegment);
+              // printDebugInfo(i, b);                 
+              sendCalibrationBuffer(); 
+              // delay(delayMs);     
             }
           }
           if (i == 20)
@@ -195,18 +194,18 @@ bool LC75823::isTimeToUpdate(unsigned long &lastUpdate, int delayMs)
 
 void LC75823::calibrationFillBuffer(int i, int b, const bool prevSegment = false)
 {
-  screenBuffer[i] |= (1 << b); // Устанавливаем бит
+  screenBuffer[i] |= (1 << b);
 
   if (prevSegment == true)
   {
     if (b == 7)
     {
-      int targetI = (i == 0) ? 19 : i - 1; // Если i == 0, то устанавливаем бит в 19 строке в 0
-      screenBuffer[targetI] &= ~(1 << 0);  // Сбрасываем бит
+      int targetI = (i == 0) ? 19 : i - 1; 
+      screenBuffer[targetI] &= ~(1 << 0);  
     }
     else
     {
-      screenBuffer[i] &= ~(1 << (b + 1)); // Сбрасываем следующий бит
+      screenBuffer[i] &= ~(1 << (b + 1));
     }
   }
 }
@@ -216,7 +215,7 @@ void LC75823::sendCalibrationBuffer()
   sendCBB();
   for (int i = 0; i < 20; i++)
   {
-    SPI.transfer(screenBuffer[i]); // Отправляем данные на дисплей
+    SPI.transfer(screenBuffer[i]);
   }
 
   sendControlBits();
